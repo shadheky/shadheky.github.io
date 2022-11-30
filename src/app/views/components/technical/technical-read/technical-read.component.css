@@ -1,0 +1,38 @@
+table{
+  background-color: rgb(158, 158, 158);
+}
+
+.create button{
+  width: 100%;
+  margin: 1rem;
+  color: rgb(19, 218, 158);
+}
+
+.create{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+mat-paginator{
+    background-color: rgb(51, 50, 50);
+    color: white;
+    font-family: sans-serif;
+}
+
+#edit{
+  color: rgb(102, 189, 247);
+}
+
+#delete{
+  color: rgb(235, 70, 70);
+}

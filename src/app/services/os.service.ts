@@ -1,0 +1,56 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+import { Client } from '../models/Client';
+import { OS } from '../models/Os';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class OsService {
+  baseUrl: String = "https://shadhekyfullstackcourse.herokuapp.com"
+
+  constructor(private http: HttpClient,
+    private snack: MatSnackBar
+  ) { }
+
+  findAll(): Observable<OS[]> {
+    const url = this.baseUrl + "/os";
+    return this.http.get<OS[]>(url);
+
+  }
+
+  findById(id: any):Observable<OS>{
+    const url = this.baseUrl + "/os/" + id
+    return this.http.get<OS>(url);
+  }
+
+  create(os: OS): Observable<OS> {
+    const url = this.baseUrl + "/os";
+    return this.http.post<OS>(url, os);
+
+  }
+  
+  update(os: OS): Observable<OS>{
+    const url = this.baseUrl + "/os" ;
+    return this.http.put<OS>(url, os);
+  }
+
+  delete(os: OS): Observable<void>{
+    const url = this.baseUrl + "/os/" + os.id;
+    return this.http.delete<void>(url);
+  }
+
+  message(msg: string): void {
+    this.snack.open(msg, 'Ok', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      duration: 4000
+
+    });
+  }
+
+
+}

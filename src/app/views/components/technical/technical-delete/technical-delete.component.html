@@ -1,0 +1,25 @@
+<form class="form">
+    <h1>Deleting a Technician</h1>
+   
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input [(ngModel)]="technical.name"  [formControl]="name" name="name" required matInput placeholder="Ex. Linus Torvald">
+      <mat-error *ngIf="name.invalid" class="name-error">{{ errorValidName() }}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+        <mat-label>CPF</mat-label>
+        <input   [(ngModel)]="technical.cpf" [formControl]="cpf" required name="cpf" matInput placeholder="Ex. 273.289.420-61" >
+        <mat-error *ngIf="cpf.invalid" class="cpf-error">{{ errorValidCpf() }}</mat-error>
+      </mat-form-field>    
+     <mat-form-field class="full-width">
+        <mat-label>Cellphone</mat-label>
+        <input [(ngModel)]="technical.cellphoneNumber" [formControl]="cellphoneNumber" required name="cellphoneNumber" matInput placeholder="Ex. (91) 9-8119-2848">
+        <mat-error *ngIf="cellphoneNumber.invalid" class="cellphone-error">{{ errorValidCellphone() }}</mat-error>
+
+      </mat-form-field>
+ 
+    <button  [disabled]="errorValidName()||errorValidCpf()||errorValidCellphone() " mat-stroked-button class="mat-elevation-z8 create-button" (click) = "delete()" id="delete-button" >Delete</button>
+    <button mat-stroked-button class="mat-elevation-z8" mat-stroked-button color="warn" (click) = "cancel()">Cancel</button>
+
+</form>

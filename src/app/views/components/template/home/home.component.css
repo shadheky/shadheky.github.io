@@ -1,0 +1,10 @@
+mat-card{
+width: 80%;
+background-color: rgb(158, 158, 158);
+margin: 1rem auto 0 auto;
+align-items: center;
+
+}
+.work-img{
+    align-items: center;
+}

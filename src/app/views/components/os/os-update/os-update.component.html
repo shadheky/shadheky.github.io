@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h1>Create a new order</h1>
+    <div class="labels">
+        <mat-form-field appearance="fill">
+            <mat-label>Select an technical</mat-label>
+            <mat-select [(value)]="os.technical">
+                <mat-option *ngFor="let tec of technicals" value="{{ tec.id }}">{{tec.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Select an client</mat-label>
+            <mat-select [(value)]="os.client">
+                <mat-option *ngFor="let cli of clients" value="{{ cli.id }}">{{cli.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select an status</mat-label>
+            <mat-select [(value)]="os.status">
+                <mat-option value="0">OPEN</mat-option>
+                <mat-option value="1">PROGRESS</mat-option>
+                <mat-option value="2">CLOSED</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select an priority</mat-label>
+            <mat-select [(value)]="os.priority">
+                <mat-option value="0">LOW</mat-option>
+                <mat-option value="1">MEAN</mat-option>
+                <mat-option value="2">HIGH</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+
+    <form class="form">
+        <mat-form-field class="full-width">
+            <mat-label>Add the observations of order service</mat-label>
+            <textarea [(ngModel)]="os.observations" name="observations" maxlength="255" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+    </form>
+    <button mat-stroked-button class="mat-elevation-z8 btn-create" [disabled]=" createError " name="createButton" (click) = "update()">Create</button>
+    <button mat-stroked-button class="mat-elevation-z8" color="warn" (click) = "cancel()">Cancel</button>
+
+
+</div>

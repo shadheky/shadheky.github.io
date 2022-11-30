@@ -1,0 +1,34 @@
+.container{
+    width: 60%;
+    margin: auto;
+    
+}
+
+#content{
+    background-color: #9e9e9e;
+    color: rgb(32, 26, 26);
+}
+
+h1{
+    text-align: center;
+}
+
+.open-date{
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 0px;
+}
+
+.observations{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+
+.close-icon{
+    margin-top: 5px;
+    margin-left: 5px;
+    color: rgb(230, 84, 84);
+    cursor: pointer;
+}
+
